@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h1>Catalogo</h1>
+<center>
+    <h2>Inserir Carro</h2>
+    <form action="{{url_for('catalogo')}}" method="post">
+        <label for="carro">Nome Carro</label>
+        <br><br>
+        <input type="text" name="carro" required />
+        <br><br>
+        <button class="btn btn-success">Adicionar</button>
+    </form>
+</center>
+
+<br />
+<hr />
+<h2>Lista de Carros</h2>
+<ol>
+    {% for carro in carros %}
+    <li>{{carro}}</li>
+    {% endfor %}
+</ol>
+{% endblock conteudo %}
